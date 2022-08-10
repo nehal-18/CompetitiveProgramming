@@ -27,3 +27,49 @@ int main() {
 	}
 	return 0;
 }
+
+//method 2 easy:
+
+#include <iostream>
+using namespace std;
+
+void CountNote(int n){
+  int note=0;
+  while(n>=1){
+    if(n>=100){
+       note=note+(n/100);
+       n=n%100;
+    }
+    if(n>=50){
+       note=note+(n/50);
+       n=n%50;
+    }
+    if(n>=10){
+       note=note+(n/10);
+       n=n%10;
+    }
+    if(n>=5){
+       note=note+(n/5);
+       n=n%5;
+    }
+    if(n>=2){
+	     note=note+(n/2);
+       n=n%2;
+    }
+    if(n>=1){
+       note=note+n;
+       n=0;
+    }
+    }
+	 cout<<note<<"\n";
+	}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	  static int n;
+	  cin>>n;
+	  CountNote(n);
+	}
+	return 0;
